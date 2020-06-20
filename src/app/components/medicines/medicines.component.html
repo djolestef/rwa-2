@@ -1,1 +1,25 @@
-<p>medicines works!</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Ime</th>
+      <th scope="col">Potreban recept</th>
+      <th scope="col">Odaberi</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let medicine of medicines">
+    <tr>
+      <td>{{ medicine.name }}</td>
+      <td>{{ medicine.needsPrescription ? "Da" : "Ne" }}</td>
+      <td>
+        <button
+          #medicineButton
+          value="{{ medicine.id }}"
+          (click)="onClick(medicineButton)"
+          class="btn btn-primary"
+        >
+          Dodaj u korpu
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,7 @@
+<div class="column">
+  <app-pharmacies
+    (medicines)="medicines = $event"
+    (flag)="flag = $event"
+  ></app-pharmacies>
+  <app-medicines *ngIf="flag" [parentData]="medicines"></app-medicines>
+</div>

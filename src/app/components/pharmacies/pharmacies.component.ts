@@ -1,7 +1,8 @@
 import { MedicineService } from './../../services/medicine.service';
 import { PharmaciesService } from './../../services/pharmacies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import Pharmacy from 'src/app/models/pharmacies.model';
+import Medicine from 'src/app/models/medicine.model';
 
 @Component({
   selector: 'app-pharmacies',
@@ -10,6 +11,8 @@ import Pharmacy from 'src/app/models/pharmacies.model';
 })
 export class PharmaciesComponent implements OnInit {
   public pharmacies: Pharmacy[];
+  @Output() public medicines = new EventEmitter();
+  @Output() public flag = new EventEmitter();
 
   constructor(
     private _pharmaciesService: PharmaciesService,
@@ -33,5 +36,11 @@ export class PharmaciesComponent implements OnInit {
           });
       });
     });
+  }
+
+  public onClick(pharmacyButton: HTMLButtonElement) {
+    let pharmacyIndex: number = parseInt(pharmacyButton.value) - 1;
+    this.medicines.emit(this.pharmacies[pharmacyIndex].medicines);
+    this.flag.emit(true);
   }
 }
