@@ -1,0 +1,71 @@
+{
+  "pharmacies": [
+    {
+      "id": 1,
+      "name": "Benu",
+      "medicines": [1, 2, 3, 4, 5, 6, 7]
+    },
+    {
+      "id": 2,
+      "name": "Hedera",
+      "medicines": [1, 2, 3, 5, 6, 7, 9]
+    },
+    {
+      "id": 3,
+      "name": "Zegin",
+      "medicines": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    },
+    {
+      "id": 4,
+      "name": "Ćele Kula",
+      "medicines": [1, 2, 3, 4, 6, 8, 9]
+    }
+  ],
+  "medicines": [
+    {
+      "id": 1,
+      "name": "Brufen",
+      "needsPrescription": false
+    },
+    {
+      "id": 2,
+      "name": "Fervex",
+      "needsPrescription": false
+    },
+    {
+      "id": 3,
+      "name": "Strepsils",
+      "needsPrescription": true
+    },
+    {
+      "id": 4,
+      "name": "Andol",
+      "needsPrescription": true
+    },
+    {
+      "id": 5,
+      "name": "Aspirin",
+      "needsPrescription": false
+    },
+    {
+      "id": 6,
+      "name": "Xanax",
+      "needsPrescription": true
+    },
+    {
+      "id": 7,
+      "name": "Caffetin",
+      "needsPrescription": false
+    },
+    {
+      "id": 8,
+      "name": "Pantetnol",
+      "needsPrescription": false
+    },
+    {
+      "id": 9,
+      "name": "Phlebodia",
+      "needsPrescription": true
+    }
+  ]
+}
