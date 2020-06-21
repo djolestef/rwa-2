@@ -1,0 +1,10 @@
+<div *ngIf="medicine">
+  <h1>{{ medicine.name }}</h1>
+  <p class="lead">{{ medicine.description }}</p>
+  <br />
+  <p class="lead">
+    Recept {{ medicine.needsPrescription ? "je" : "nije" }} potreban za ovaj
+    lek.
+  </p>
+</div>
+<button (click)="back()" class="btn btn-info">Nazad u apoteku</button>

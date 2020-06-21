@@ -8,7 +8,9 @@
   </thead>
   <tbody *ngFor="let medicine of medicines">
     <tr>
-      <td>{{ medicine.name }}</td>
+      <td (click)="onClickMedicine(medicine)">
+        {{ medicine.name }}
+      </td>
       <td>{{ medicine.needsPrescription ? "Da" : "Ne" }}</td>
       <td>
         <button

@@ -13,4 +13,8 @@ export class MedicineService {
   public fetchMedicineById(id: Medicine): Observable<Medicine> {
     return this.http.get<Medicine>(`${this._url}/${id}`);
   }
+
+  public fetchMedicineByIdNumber(idNumber: number): Observable<Medicine> {
+    return this.http.get<Medicine>(`${this._url}/${idNumber}`);
+  }
 }

@@ -25,47 +25,56 @@
     {
       "id": 1,
       "name": "Brufen",
-      "needsPrescription": false
+      "needsPrescription": false,
+      "description": "Brufen pripada grupi lekova sa analgetskim i antiinflamatornim svojstvima. Koristi se za oslobađanje od bola i inflamacije u zapaljenskim stanjima kao što je osteoartritis, reumatoidni artritis (uključujući juvenilni reumatoidni artritis ili Stil-ovu bolest), artritis kičme (ankilozni spondilitis), otečene zglobove (artropatije), smrznuto rame (kapsulitis, ukočenost i bolovi u ramenu), zapaljenje omotača zgloba (burzitis), zapaljenje tetiva (tendinitis), zapaljenje tetivnog omotača (tendosinovitis), bolovi u donjem delu leđa, kod povreda mekog tkiva kao što su uganuća ili istegnuća."
     },
     {
       "id": 2,
       "name": "Fervex",
-      "needsPrescription": false
+      "needsPrescription": false,
+      "description": "Lek Fervex za odrasle se primenjuje kao simptomatska terapija prehlade, zapaljenja sluznice nosa (rinitisa), zapaljenja sluznice nosa i ždrela (rinofaringitisa) i stanja sličnih gripu kod odraslih i adolescenata (15 godina i stariji) koja su praćena sledećim simptomima:\n bistra sekrecija iz nosa i suzenje očiju, kijavica, glavobolja i/ili povišena telesna temperatura."
     },
     {
       "id": 3,
       "name": "Strepsils",
-      "needsPrescription": true
+      "needsPrescription": true,
+      "description": "Lek Strepsils Intensive sadrži aktivnu supstancu flurbiprofen koji pripada grupi lekova koji se nazivaju nesteroidni antiinflamatorni lekovi (NSAIL).Lek Strepsils Intensive se koristi za ublažavanje simptoma upale grla, kao što su bol i otok u grlu. "
     },
     {
       "id": 4,
       "name": "Andol",
-      "needsPrescription": true
+      "needsPrescription": true,
+      "description": "Andol inhibira slepljivanje i nagomilavanje krvnih pločica (trombocita) i na taj način sprečava nastajanje krvnih ugrušaka (tromba) – inhibicija agregacije trombocita. Lek se ne primenjuje kod dece mlañe od šesnaest godina godina (osim u specifičnim indikacijama). Lek je kontraindikovan i u poslednjem trimestru trudnoće i kod pacijenata koji primaju dozu metotreksata od 15 mg/nedeljno ili više. Primena acetilsalicilne kiseline je kontraindikovana kod teškog oštećenja srca, bubrega i jetre.  "
     },
     {
       "id": 5,
       "name": "Aspirin",
-      "needsPrescription": false
+      "needsPrescription": false,
+      "description": "ASPIRIN protect inhibira slepljivanje i nagomilavanje krvnih pločica (trombocita) i na taj način sprečava nastajanje krvnih ugrušaka (tromba) – inhibicija agregacije trombocita. ASPIRIN protect ne treba davati deci i adolescentima u slučaju virusnih infekcija sa ili bez temperature ukoliko prethodno ne potražite savet doktora."
     },
     {
       "id": 6,
       "name": "Xanax",
-      "needsPrescription": true
+      "needsPrescription": true,
+      "description": "Lek Xanax sadrži aktivnu supstancu alprazolam. Alprazolam pripada grupi lekova koji se nazivaju benzodiazepini, koji deluju tako što smanjuju anksioznost (uznemirenost), ubrzavaju uspavljivanje, smanjuju agitaciju (uzrujanost) i emocionalnu neuravnoteženost (sedativni efekat). Lek Xanax je namenjen za lečenje anksioznosti, napetosti ili drugih somatskih (telesnih) ili psihijatrijskih simptoma povezanih sa anksioznošću. Takođe, primenjuje se kod napada panike sa agorafobijom ili bez nje (strah od otvorenog prostora). Benzodiazepini su namenjeni za primenu samo u slučajevima prisustva teških oblika bolesti koje onesposobljavaju pacijenta i koje ga dovode do izražene uznemirenosti."
     },
     {
       "id": 7,
       "name": "Caffetin",
-      "needsPrescription": false
+      "needsPrescription": false,
+      "description": "Lek Caffetin je kombinovani preparat koji se koristi za kratkotrajnu terapiju akutnog, umerenog bola koji se ublažava primenom samog paracetamola, ibuprofena ili acetalisalicilne kiseline kao što je glavobolja, zubobolja, migrena, išijalgija, mijalgija i menstrualni bol."
     },
     {
       "id": 8,
       "name": "Pantetnol",
-      "needsPrescription": false
+      "needsPrescription": false,
+      "description": "Pantenol krema pomaže regeneraciji i hidrataciji kože. Povećava elastičnost kože čineći je nežnom, glatkom i sjajnom. Preporučuje se za epitelizaciju kože kod blažih (zatvorenih) rana, ojeda i opekotina."
     },
     {
       "id": 9,
-      "name": "Phlebodia",
-      "needsPrescription": true
+      "name": "Demetrazepam",
+      "needsPrescription": true,
+      "description": "Lek Demetrazepam je trankilizer koji sadrži aktivnu supstancu prazepam. Pripada grupi lekova pod nazivom benzodiazepini. Benzodiazepini utiču na hemijske procese u mozgu i pomažu u ublažavanju psihičke napetosti i stresa."
     }
   ]
 }
