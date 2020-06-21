@@ -3,6 +3,7 @@
     <tr>
       <th scope="col">Ime</th>
       <th scope="col">Potreban recept</th>
+      <th scope="col">Cena</th>
       <th scope="col">Odaberi</th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
         {{ medicine.name }}
       </td>
       <td>{{ medicine.needsPrescription ? "Da" : "Ne" }}</td>
+      <td>{{ medicine.price + " RSD" }}</td>
       <td>
         <button
           #medicineButton

@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MedicineService } from './services/medicine.service';
 import { DetailsComponent } from './components/details/details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/reducers/cart.reducer';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     DetailsComponent,
     NotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    StoreModule.forRoot({ cart: reducer }),
+  ],
   providers: [MedicineService, PharmaciesService],
   bootstrap: [AppComponent],
 })

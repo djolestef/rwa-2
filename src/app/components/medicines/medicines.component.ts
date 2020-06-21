@@ -1,6 +1,9 @@
+import { CartState } from './../../store/reducers/cart.reducer';
 import { Component, OnInit, Input } from '@angular/core';
 import Medicine from 'src/app/models/medicine.model';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { addToCart } from 'src/app/store/actions/cart.action';
 
 @Component({
   selector: 'app-medicines',
@@ -10,12 +13,16 @@ import { Router } from '@angular/router';
 export class MedicinesComponent implements OnInit {
   @Input('parentData') public medicines: Medicine[];
 
-  constructor(private _router: Router) {}
+  constructor(
+    private _router: Router,
+    private store: Store<{ cart: CartState }>
+  ) {}
 
   ngOnInit(): void {}
 
   public onClick(medicineButton: HTMLButtonElement) {
-    console.log(medicineButton.value);
+    let medicine: Medicine = new Medicine(0, 'djole', false, 250, 'djole car');
+    this.store.dispatch(addToCart({ medicine }));
   }
 
   public onClickMedicine(medicine) {
