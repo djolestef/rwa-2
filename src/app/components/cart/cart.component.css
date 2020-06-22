@@ -1,0 +1,9 @@
+.custom {
+  max-width: 150px;
+}
+
+.custom-remove {
+  max-width: 150px;
+  max-height: 20px;
+  line-height: 5px;
+}

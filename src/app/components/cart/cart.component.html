@@ -1,2 +1,23 @@
-<p>cart works!</p>
-<button (click)="prikazi()">prikazi</button>
+<div class="card my-3 shadow p-4" *ngIf="medicinesInCart[0]">
+  <h2>Korpa:</h2>
+  <div *ngFor="let medicine of medicinesInCart; index as i">
+    {{ i + 1 + "." }} {{ medicine.name }}
+    <button
+      #removeMedicineButtion
+      (click)="removeMedicine(removeMedicineButtion)"
+      class="btn btn-danger custom-remove"
+      value="{{ medicine.id }}"
+    >
+      X
+    </button>
+  </div>
+  <p>{{ "Ukupan račun: " + total + "RSD" }}</p>
+  <button (click)="onClick()" class="btn btn-success custom">Rezerviši</button>
+</div>
+
+<!-- <p>Količina:</p>
+<select type="number" class="custom-select">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+</select> -->

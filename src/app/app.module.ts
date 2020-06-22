@@ -13,7 +13,8 @@ import { MedicineService } from './services/medicine.service';
 import { DetailsComponent } from './components/details/details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store/reducers/cart.reducer';
+import { cartReducer } from './store/reducers/cart.reducer';
+import { medicinesReducer } from './store/reducers/medicines.reducer';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { reducer } from './store/reducers/cart.reducer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ cart: reducer }),
+    StoreModule.forRoot({ medicines: medicinesReducer, cart: cartReducer }),
   ],
   providers: [MedicineService, PharmaciesService],
   bootstrap: [AppComponent],

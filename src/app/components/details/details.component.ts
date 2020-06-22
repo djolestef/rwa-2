@@ -1,5 +1,5 @@
 import Medicine from 'src/app/models/medicine.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { MedicineService } from 'src/app/services/medicine.service';
 

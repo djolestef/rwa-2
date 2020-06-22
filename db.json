@@ -3,22 +3,26 @@
     {
       "id": 1,
       "name": "Benu",
-      "medicines": [1, 2, 3, 4, 5, 6, 7]
+      "medicines": [1, 2, 3, 4, 5, 6, 7],
+      "message": "Prisutni smo na 370 lokacija širom naše zemlje i biće nas još. Zdravstvena ustanova BENU je najveći lanac apoteka u Srbiji i deo je velike međunarodne kompanije PHOENIX iz Nemačke, koja u svom sastavu ima preko 2400 apoteka u 14 evropskih zemalja."
     },
     {
       "id": 2,
       "name": "Hedera",
-      "medicines": [1, 2, 3, 5, 6, 7, 9]
+      "medicines": [1, 2, 3, 5, 6, 7, 9],
+      "message": "Apoteka Hedera uspešno posluje od početka svog rada sa sedištem u Nišu na teritoriji opštine Mediana. "
     },
     {
       "id": 3,
       "name": "Zegin",
-      "medicines": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+      "medicines": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      "message": "ZEGIN grupacija je prva i najveća veledrogerija u Makedoniji. Osnovne delatnosti veledrogerije ZEGIN obuhvataju unutrašnju i spoljnu trgovinu lekovima, medicinskim sredstvima, dijetetskim, makrobiotičkim i kozmetičkim proizvodima. "
     },
     {
       "id": 4,
       "name": "Ćele Kula",
-      "medicines": [1, 2, 3, 4, 6, 8, 9]
+      "medicines": [1, 2, 3, 4, 6, 8, 9],
+      "message": "Apoteka Ćele Kula je državna apoteka koja se nalazi u Nišu na Sinđelićevom trgu. Apoteka je otvorena 24h."
     }
   ],
   "medicines": [

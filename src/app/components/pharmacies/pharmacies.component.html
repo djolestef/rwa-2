@@ -1,5 +1,6 @@
-<div *ngFor="let pharmacy of pharmacies">
+<div>
   <button
+    *ngFor="let pharmacy of pharmacies"
     #pharmacyButton
     value="{{ pharmacy.id }}"
     (click)="onClick(pharmacyButton)"

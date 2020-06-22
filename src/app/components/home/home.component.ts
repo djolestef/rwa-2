@@ -7,8 +7,7 @@ import Medicine from 'src/app/models/medicine.model';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  @Input() public flag: boolean;
-  @Input() public medicines: Medicine[];
+  @Input() public pharmacyMessage: Medicine[];
 
   constructor() {}
 
