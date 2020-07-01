@@ -1,6 +1,9 @@
 import { removeAllFromCart } from './../../store/actions/cart.action';
 import { CartState } from './../../store/reducers/cart.reducer';
-import { saveMedicines } from './../../store/actions/medicines.action';
+import {
+  saveMedicines,
+  fetchAllMedicines,
+} from './../../store/actions/medicines.action';
 import { MedicineService } from './../../services/medicine.service';
 import { PharmaciesService } from './../../services/pharmacies.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
@@ -17,6 +20,7 @@ import { MedicinesState } from 'src/app/store/reducers/medicines.reducer';
 export class PharmaciesComponent implements OnInit {
   public pharmacies: Pharmacy[];
   @Output() public pharmacyMessage = new EventEmitter();
+  @Output() public medicinesIds = new EventEmitter();
 
   constructor(
     private _pharmaciesService: PharmaciesService,
@@ -28,28 +32,14 @@ export class PharmaciesComponent implements OnInit {
   ngOnInit(): void {
     this._pharmaciesService.fetchPharmacies().subscribe((pharmacies) => {
       this.pharmacies = pharmacies;
-      this.intializeMedicines();
-    });
-  }
-
-  private intializeMedicines(): void {
-    this.pharmacies.forEach((pharmacy) => {
-      pharmacy.medicines.map((medicineId, index) => {
-        this._medicineService
-          .fetchMedicineById(medicineId)
-          .subscribe((medicine) => {
-            pharmacy.medicines[index] = medicine;
-          });
-      });
     });
   }
 
   public onClick(pharmacyButton: HTMLButtonElement) {
     let pharmacyIndex: number = parseInt(pharmacyButton.value) - 1;
 
-    let medicines: Medicine[] = this.pharmacies[pharmacyIndex].medicines;
-    this._medicinesStore.dispatch(saveMedicines({ medicines }));
     this._cartStore.dispatch(removeAllFromCart());
     this.pharmacyMessage.emit(this.pharmacies[pharmacyIndex].message);
+    this.medicinesIds.emit(this.pharmacies[pharmacyIndex].medicines);
   }
 }

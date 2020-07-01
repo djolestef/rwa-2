@@ -1,4 +1,8 @@
-import { saveMedicines } from './../actions/medicines.action';
+import {
+  saveMedicines,
+  fetchMedicines,
+  fetchAllMedicines,
+} from './../actions/medicines.action';
 import Medicine from 'src/app/models/medicine.model';
 import { createReducer, on, Action } from '@ngrx/store';
 import { createEntityAdapter, EntityState, EntityAdapter } from '@ngrx/entity';

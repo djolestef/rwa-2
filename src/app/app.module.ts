@@ -15,6 +15,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { cartReducer } from './store/reducers/cart.reducer';
 import { medicinesReducer } from './store/reducers/medicines.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { MedicineEffects } from './store/effects/medicines.effects';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { medicinesReducer } from './store/reducers/medicines.reducer';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({ medicines: medicinesReducer, cart: cartReducer }),
+    EffectsModule.forRoot([MedicineEffects]),
   ],
   providers: [MedicineService, PharmaciesService],
   bootstrap: [AppComponent],

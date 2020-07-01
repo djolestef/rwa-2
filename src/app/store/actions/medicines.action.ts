@@ -5,3 +5,12 @@ export const saveMedicines = createAction(
   '[pharmacies component] save medicines in store',
   props<{ medicines: Medicine[] }>()
 );
+
+export const fetchMedicines = createAction(
+  '[medicines component] fetch medicines',
+  props<{ medicines: Medicine[] }>()
+);
+
+export const fetchAllMedicines = createAction(
+  '[medicines component] fetch all medicines'
+);

@@ -21,7 +21,7 @@ export class DetailsComponent implements OnInit {
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.medicineId = parseInt(params.get('id'));
       this._medicineService
-        .fetchMedicineByIdNumber(this.medicineId)
+        .fetchMedicineById(this.medicineId)
         .subscribe((medicine) => {
           this.medicine = medicine;
         });
