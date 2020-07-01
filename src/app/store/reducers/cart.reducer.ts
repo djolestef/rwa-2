@@ -3,7 +3,7 @@ import {
   removeMedicineFromCart,
 } from './../actions/cart.action';
 import Medicine from 'src/app/models/medicine.model';
-import { createReducer, on, Action } from '@ngrx/store';
+import { createReducer, on, Action, ActionReducer } from '@ngrx/store';
 import { addToCart } from '../actions/cart.action';
 import { createEntityAdapter, EntityState, EntityAdapter } from '@ngrx/entity';
 

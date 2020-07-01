@@ -15,4 +15,7 @@ export const getMedicines = createSelector(
   (medicinesState: MedicinesState) => medicinesState.entities
 );
 
-
+export const getIds = createSelector(
+  getMedicinesState,
+  (medicinesState: MedicinesState) => medicinesState.medicinesIds
+);

@@ -1,16 +1,11 @@
 import { removeAllFromCart } from './../../store/actions/cart.action';
 import { CartState } from './../../store/reducers/cart.reducer';
-import {
-  saveMedicines,
-  fetchAllMedicines,
-} from './../../store/actions/medicines.action';
-import { MedicineService } from './../../services/medicine.service';
 import { PharmaciesService } from './../../services/pharmacies.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import Pharmacy from 'src/app/models/pharmacies.model';
-import Medicine from 'src/app/models/medicine.model';
 import { Store } from '@ngrx/store';
-import { MedicinesState } from 'src/app/store/reducers/medicines.reducer';
+import { MedicinesState } from './../../store/reducers/medicines.reducer';
+import { saveIds } from 'src/app/store/actions/medicines.action';
 
 @Component({
   selector: 'app-pharmacies',
@@ -20,13 +15,11 @@ import { MedicinesState } from 'src/app/store/reducers/medicines.reducer';
 export class PharmaciesComponent implements OnInit {
   public pharmacies: Pharmacy[];
   @Output() public pharmacyMessage = new EventEmitter();
-  @Output() public medicinesIds = new EventEmitter();
 
   constructor(
     private _pharmaciesService: PharmaciesService,
-    private _medicineService: MedicineService,
-    private _medicinesStore: Store<{ medicines: MedicinesState }>,
-    private _cartStore: Store<{ cart: CartState }>
+    private _cartStore: Store<{ cart: CartState }>,
+    private _medicinesStore: Store<{ medicine: MedicinesState }>
   ) {}
 
   ngOnInit(): void {
@@ -35,11 +28,13 @@ export class PharmaciesComponent implements OnInit {
     });
   }
 
-  public onClick(pharmacyButton: HTMLButtonElement) {
+  public onClick(pharmacyButton: HTMLButtonElement): void {
     let pharmacyIndex: number = parseInt(pharmacyButton.value) - 1;
 
     this._cartStore.dispatch(removeAllFromCart());
     this.pharmacyMessage.emit(this.pharmacies[pharmacyIndex].message);
-    this.medicinesIds.emit(this.pharmacies[pharmacyIndex].medicines);
+    let medicinesIds = (this.pharmacies[pharmacyIndex]
+      .medicines as any) as Number[];
+    this._medicinesStore.dispatch(saveIds({ medicinesIds }));
   }
 }

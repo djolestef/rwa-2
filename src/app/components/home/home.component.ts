@@ -8,7 +8,6 @@ import Medicine from 'src/app/models/medicine.model';
 })
 export class HomeComponent implements OnInit {
   @Input() public pharmacyMessage: Medicine[];
-  @Input() public medicinesIds: Medicine[];
 
   constructor() {}
 

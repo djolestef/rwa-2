@@ -22,13 +22,13 @@ export class DetailsComponent implements OnInit {
       this.medicineId = parseInt(params.get('id'));
       this._medicineService
         .fetchMedicineById(this.medicineId)
-        .subscribe((medicine) => {
+        .subscribe((medicine: Medicine) => {
           this.medicine = medicine;
         });
     });
   }
 
-  public back() {
+  public back(): void {
     this._router.navigate(['']);
   }
 }

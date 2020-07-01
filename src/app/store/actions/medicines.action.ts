@@ -14,3 +14,8 @@ export const fetchMedicines = createAction(
 export const fetchAllMedicines = createAction(
   '[medicines component] fetch all medicines'
 );
+
+export const saveIds = createAction(
+  '[medicines component] save ids',
+  props<{ medicinesIds: Number[] }>()
+);

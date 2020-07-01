@@ -12,7 +12,7 @@ export class MedicineEffects {
       ofType('[medicines component] fetch all medicines'),
       mergeMap(() =>
         this._medicineService.fetchAllMedicines().pipe(
-          map((medicines) => ({
+          map((medicines: Medicine[]) => ({
             type: '[pharmacies component] save medicines in store',
             medicines: medicines,
           }))

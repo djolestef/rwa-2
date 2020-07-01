@@ -1,13 +1,6 @@
 <div class="column">
-  <app-pharmacies
-    (pharmacyMessage)="pharmacyMessage = $event"
-    (medicinesIds)="medicinesIds = $event"
-  ></app-pharmacies>
+  <app-pharmacies (pharmacyMessage)="pharmacyMessage = $event"></app-pharmacies>
 
-  <app-medicines
-    *ngIf="medicinesIds"
-    [parentData]="pharmacyMessage"
-    [parentData1]="medicinesIds"
-  ></app-medicines>
+  <app-medicines [parentData]="pharmacyMessage"></app-medicines>
   <app-cart></app-cart>
 </div>

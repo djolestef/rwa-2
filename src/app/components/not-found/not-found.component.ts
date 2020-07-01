@@ -11,7 +11,7 @@ export class NotFoundComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public homePage() {
+  public homePage(): void {
     this._router.navigate(['']);
   }
 }

@@ -1,8 +1,8 @@
+import { getIds } from './../../store/reducers/index';
 import { MedicinesState } from './../../store/reducers/medicines.reducer';
-import { Observable } from 'rxjs';
 import { MedicineService } from 'src/app/services/medicine.service';
 import { CartState } from './../../store/reducers/cart.reducer';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Medicine from 'src/app/models/medicine.model';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
@@ -15,9 +15,10 @@ import { getMedicines } from 'src/app/store/reducers';
   styleUrls: ['./medicines.component.css'],
 })
 export class MedicinesComponent implements OnInit {
-  public medicines: Medicine[];
+  public medicines: Medicine[] = [];
+  public medicinesIds: Number[];
+
   @Input('parentData') public pharmacyMessage: string;
-  @Input('parentData1') public medicinesIds: any;
 
   constructor(
     private _router: Router,
@@ -30,8 +31,10 @@ export class MedicinesComponent implements OnInit {
     this._medicinesStore.dispatch({
       type: '[medicines component] fetch all medicines',
     });
-
-    this.refreshMedicines();
+    this._medicinesStore.pipe(select(getIds)).subscribe((data) => {
+      this.medicinesIds = data;
+      this.refreshMedicines();
+    });
   }
 
   ngOnChanges(): void {
@@ -39,14 +42,16 @@ export class MedicinesComponent implements OnInit {
   }
 
   public refreshMedicines(): void {
-    this._medicinesStore.pipe(select(getMedicines)).subscribe((data) => {
-      this.medicines = [];
-      for (let value in data) {
-        if (this.medicinesIds.includes(data[value].id)) {
-          this.medicines.push(data[value]);
+    if (this.medicinesIds) {
+      this._medicinesStore.pipe(select(getMedicines)).subscribe((data) => {
+        this.medicines = [];
+        for (let value in data) {
+          if (this.medicinesIds.includes(data[value].id)) {
+            this.medicines.push(data[value]);
+          }
         }
-      }
-    });
+      });
+    }
   }
 
   public onClick(medicineButton: HTMLButtonElement): void {

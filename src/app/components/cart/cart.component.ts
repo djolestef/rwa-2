@@ -26,13 +26,13 @@ export class CartComponent implements OnInit {
       for (let value in data) {
         this.medicinesInCart.push(data[value]);
       }
-      this.medicinesInCart.forEach((medicine) => {
+      this.medicinesInCart.forEach((medicine: Medicine) => {
         this.total += medicine.price;
       });
     });
   }
 
-  public onClick() {
+  public onClick(): void {
     this._store.dispatch(removeAllFromCart());
     alert(
       'Vaša porudžbina je registrovana pod brojem ' +
@@ -41,7 +41,7 @@ export class CartComponent implements OnInit {
     );
   }
 
-  public removeMedicine(button: HTMLButtonElement) {
+  public removeMedicine(button: HTMLButtonElement): void {
     let id: number = parseInt(button.value);
     this._store.dispatch(removeMedicineFromCart({ id }));
   }
